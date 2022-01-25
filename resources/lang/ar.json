@@ -362,6 +362,7 @@
     "cant delete bid in last 10 hours of auction": "لا يمكنك حذف العرض في آخر 10 ساعات للمزاد.",
     "cant update bid in last 10 hours of auction": "لا يمكنك تعديل العرض في آخر 10 ساعات للمزاد.",
     "bid deleted successfuly": "تم حذف العرض بنجاح.",
+    "why not order it now!:": "لم لا تطلب المنتج الآن!:",
     "fail to delete bid": "فشل حذف العرض.",
     "bid updated successfully": "تم تعديل العرض بنجاح.",
     "update bid faild": "فشل تعديل العرض",

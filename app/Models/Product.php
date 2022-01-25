@@ -129,12 +129,12 @@ class Product extends Model
             $product->end_auction = $product->end_auction->addDays(15);
             $product->save();
             $craftsman = $product->user;
-            // Mail::raw(trans("We have extended the auction of Your product: << ") . $product->title . trans(" >> because it hasnt achieved any bids yet!, you can update the product description to be more attractive or you can even delete the product."), function ($mail) use ($craftsman) {
+            // Mail::raw(trans("We have extended the auction of Your product: << ") . trans($product->title) . trans(" >> because it hasnt achieved any bids yet!, you can update the product description to be more attractive or you can even delete the product."), function ($mail) use ($craftsman) {
             //     $mail->from('laraveldemo2018@gmail.com', trans('Handicrafts Auction'));
             //     $mail->to($craftsman->email)
             //         ->subject(trans('Your Product Auction Has Been Extended Automatically'));
             // });
-            return redirect()->back();//->with('success', 'The Acution on: << ' . $this->title . ' >> has been extended automaticlly due to No Bids');
+            return redirect()->back();//->with('success', 'The Acution on: << ' . trans($this->title) . ' >> has been extended automaticlly due to No Bids');
         } else if ($this->not_ordered() && $this->isAuctioned() && $this->isExpired()) {
             $product = Product::findOrFail($this->id);
             $order = Order::create([
@@ -156,37 +156,37 @@ class Product extends Model
                 $admins = User::where('role_id', '=', 1)->get();
                 $ordersURL= route('orders.index');
                 // foreach($admins as $user) {
-                //     Mail::raw(trans("There was a new order <<").$product->title.trans(">>, ")."\n \n".trans("Please check the system orders: ")."\n".$ordersURL, function ($mail) use ($user) {
+                //     Mail::raw(trans("There was a new order <<").trans($product->title).trans(">>, ")."\n \n".trans("Please check the system orders: ")."\n".$ordersURL, function ($mail) use ($user) {
                 //         $mail->from('laraveldemo2018@gmail.com', trans('Handicrafts Auction'));
                 //         $mail->to($user->email)
                 //             ->subject(trans('There was a new order'));
                 //     });
                 // }
                 // foreach($otherBidders as $otherBidder){
-                //     Mail::raw($otherBidder->username.trans(" had won the auction on: << ") . $product->title . trans(" >>."), function ($mail) use ($otherBidder) {
+                //     Mail::raw($otherBidder->username.trans(" had won the auction on: << ") . trans($product->title) . trans(" >>."), function ($mail) use ($otherBidder) {
                 //         $mail->from('laraveldemo2018@gmail.com', trans('Handicrafts Auction'));
                 //         $mail->to($otherBidder->email)
                 //             ->subject(trans('Auction has finished'));
                 //     });
                 // }
-                // Mail::raw(trans("Congrats 🎉, You had won new auction, its for product: << ") . $product->title . trans(" >>, The product will deliver within 3 hours,")." \n \n" . trans("Please confirm the receipt from Your Orders Panel immediately as you receive your product:")."\n".route('buyer.ordered_products'), function ($mail) use ($user) {
+                // Mail::raw(trans("Congrats 🎉, You had won new auction, its for product: << ") . trans($product->title) . trans(" >>, The product will deliver within 3 hours,")." \n \n" . trans("Please confirm the receipt from Your Orders Panel immediately as you receive your product:")."\n".route('buyer.ordered_products'), function ($mail) use ($user) {
                 //     $mail->from('laraveldemo2018@gmail.com', trans('Handicrafts Auction'));
                 //     $mail->to($user->email)
                 //         ->subject(trans('You had won new auction 🎉'));
                 // });
                 // $craftsman = Product::where('id', '=', $this->id)->first()->user;
-                // Mail::raw(trans("Congrats 🎉, Your product: << ") . $product->title . trans(" >> has been ordered by the bidder auction winner:") . $user->username . trans(", You have 3 hours to deliver it to him,")." \n \n". trans(" Please check Your Ordered Products Panel to get the buyer address:")."\n".route('craftsman.ordered_products'). "\n". trans(" When you deliver buyer the product ask him to confirm the product delivery from the website immediately as he received it."), function ($mail) use ($craftsman) {
+                // Mail::raw(trans("Congrats 🎉, Your product: << ") . trans($product->title) . trans(" >> has been ordered by the bidder auction winner:") . $user->username . trans(", You have 3 hours to deliver it to him,")." \n \n". trans(" Please check Your Ordered Products Panel to get the buyer address:")."\n".route('craftsman.ordered_products'). "\n". trans(" When you deliver buyer the product ask him to confirm the product delivery from the website immediately as he received it."), function ($mail) use ($craftsman) {
                 //     $mail->from('laraveldemo2018@gmail.com', trans('Handicrafts Auction'));
                 //     $mail->to($craftsman->email)
                 //         ->subject(trans('Your Have New Ordered Product'));
                 // });
 
                 if (auth()->user() && $this->maxBidder()->id == auth()->user()->id) {
-                    return redirect()->back()->with('success', trans('Congrats 🎉, You win the auction on: << ') . $product->title . trans(' >> the product will deliver within 3 hours, please check Your Orders Panel.'));
+                    return redirect()->back()->with('success', trans('Congrats 🎉, You win the auction on: << ') . trans($product->title) . trans(' >> the product will deliver within 3 hours, please check Your Orders Panel.'));
                 } else if (auth()->user() && $this->user_id == auth()->user()->id) {
-                    return redirect()->back()->with('success', trans('Congrats 🎉, ') . $this->maxBidder()->username . trans(' wins the acution on Your product: << ') . $this->title . trans(' >>, Check your Ordered Products panel, you have to deliver him the product within 3 hours'));
+                    return redirect()->back()->with('success', trans('Congrats 🎉, ') . $this->maxBidder()->username . trans(' wins the acution on Your product: << ') . trans($this->title) . trans(' >>, Check your Ordered Products panel, you have to deliver him the product within 3 hours'));
                 } else {
-                    return redirect()->back()->with('success', $this->maxBidder()->username . trans(' wins the acution on: << ') . $this->title . trans(' >> '));
+                    return redirect()->back()->with('success', $this->maxBidder()->username . trans(' wins the acution on: << ') . trans($this->title) . trans(' >> '));
                 }
             }
         }

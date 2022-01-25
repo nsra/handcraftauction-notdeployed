@@ -1,5 +1,5 @@
 <div>
-    <div class="modal-body">
+    <div class="modal-body" style="overflow-y: auto; max-height: 420px;">
     <h5 class="text-center">{{ __('Bid history for ')}}<b> {{$bid_history->first()->bid->user->username}}</b> {{ __('on')}} <b>{{ __($bid_history->first()->bid->product->title)}} </b> 
         </h5>
         <table class="table table-bordered flip-content">
@@ -19,14 +19,15 @@
                     </tr>
                 @endforeach
             </tbody>
-            <div class="com-md-12 text-right">
-                {{ $bid_history->links('pagination::bootstrap-4') }}
-            </div>
+           
         </table>
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-dark" onClick="removeBackdrop()" data-dismiss="modal">{{ __('OK')}}</button>
     </div>
+    {{-- <div class="com-md-12 text-right">
+        {{ $bid_history->links('pagination::bootstrap-4') }}
+    </div> --}}
 </div>
 
 

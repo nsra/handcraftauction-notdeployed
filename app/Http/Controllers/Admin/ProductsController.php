@@ -81,7 +81,7 @@ class ProductsController extends Controller
             if ($product->bids->count() > 0) $product->bids()->delete();
             $product->delete();
             $user = $product->user;
-            // Mail::raw(trans("your product <<").$product->title.trans(">> has been deleted by Handicrafts Auction Admins"), function ($mail) use ($user) {
+            // Mail::raw(trans("your product <<").trans($product->title).trans(">> has been deleted by Handicrafts Auction Admins"), function ($mail) use ($user) {
             //     $mail->from('laraveldemo2018@gmail.com', trans('Handicrafts Auction'));
             //     $mail->to($user->email)
             //         ->subject(trans('your product has been deleted'));

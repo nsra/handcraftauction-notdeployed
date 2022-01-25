@@ -89,7 +89,7 @@ class HomeController extends Controller
     public function bid_history($id)
     {
         $bid= Bid::find($id);
-        $bid_history = Bidupdate::where('bid_id', '=', $id)->orderBy('id', 'DESC')->paginate(8);
+        $bid_history = Bidupdate::where('bid_id', '=', $id)->orderBy('id', 'DESC')->get();
         return view('app.bid_history', compact('bid_history'));
     }
 

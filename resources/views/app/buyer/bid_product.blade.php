@@ -132,7 +132,12 @@
                                         <label>{{ __('Bid Price')}}</label>
                                         <input required type="number" class="@error('price') is-invalid @enderror form-control" name="price"
                                             min="{{ ($product->isAuctioned() ? $product->maxBidPrice() + $product->bidIncreament(): $product->startingBidPrice()) }}"
-                                            placeholder="{{ __('min value accepted:')}} {{ ($product->isAuctioned() ? $product->maxBidPrice() + $product->bidIncreament(): $product->startingBidPrice()) }}$">
+                                            @if( ($product->maxBidPrice() + $product->bidIncreament()) > $product->orderNowPrice )
+                                            placeholder="{{ __('why not order it now!:')}} {{ $product->orderNowPrice }}$"
+                                            @else
+                                            placeholder="{{ __('min value accepted:')}} {{ ($product->isAuctioned() ? $product->maxBidPrice() + $product->bidIncreament(): $product->startingBidPrice()) }}$"
+                                            @endif
+                                            >
                                         @error('price')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ __($message) }}</strong>
@@ -142,7 +147,7 @@
                                     <div class="col-5">
                                         <label >{{ __('Bid description')}}</label>
                                         <textarea class="form-control {{app()->getLocale() == 'en' ? 'mb-1' : '' }} @error('description') is-invalid @enderror" name="description"
-                                            >{{$product->bids->where('user_id','=', auth()->user()->id)->first()->description}}</textarea>
+                                            >{{ __($product->bids->where('user_id','=', auth()->user()->id)->first()->description)}}</textarea>
                                         @error('description')
                                             <span class="invalid-feedback mt-3" role="alert">
                                                 <strong>{{ __($message) }}</strong>
