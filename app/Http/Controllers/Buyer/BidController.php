@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Buyer;
 use App\Http\Controllers\Controller;
 use App\Models\Product;
 use App\Models\Bid;
+use App\Models\User;
 use App\Models\Bidupdate;
 use App\Models\Category;
 use Carbon\Carbon;
@@ -12,7 +13,7 @@ use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
-
+use Illuminate\Support\Facades\Mail;
 
 class BidController extends Controller
 {
@@ -85,7 +86,7 @@ class BidController extends Controller
         $product = $bid->product;
 
         if(floor($product->remainingTime()/3600) < 10) {
-            return redirect()->back()->with('error', 'cant delete bid in last 10 hours of auction');
+            return redirect()->back()->with('error', 'cant update bid in last 10 hours of auction');
         }
 
         $min = !$product->isAuctioned() ? $product->startingBidPrice(): $product->maxBidPrice() + $product->bidIncreament();
@@ -103,8 +104,18 @@ class BidController extends Controller
                 'created_at' => Carbon::now()
             ]);
         }
-        if($bid_updates->save() === True)
+        $otherBidders_ids = Bid::where([['product_id', '=', $product->id], ['user_id', '!=', Auth::user()->id]])->get()->pluck('user_id');
+        $otherBidders= User::whereIn('id', $otherBidders_ids)->get();
+        if($bid_updates->save() === True){
+            // foreach($otherBidders as $otherBidder){
+            //     Mail::raw($otherBidder->username.trans(" had updated his bid on: << ") . trans($product->title) . trans(" >>."), function ($mail) use ($otherBidder) {
+            //         $mail->from('laraveldemo2018@gmail.com', trans('Handicrafts Auction'));
+            //         $mail->to($otherBidder->email)
+            //             ->subject(trans('Bid has updated'));
+            //     });
+            // }
             return redirect()->back()->with('success', 'bid updated successfully');
+        }
         else
             return redirect()->back()->with('error', 'update bid faild');
     }

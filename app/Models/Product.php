@@ -150,7 +150,9 @@ class Product extends Model
                 $this->update();
                 $user = Order::where('product_id', '=', $this->id)->first()->user;
                 $product = Order::where('product_id', '=', $this->id)->first()->product;
-                $otherBidders = User::where('id', '!=', $this->maxBidder()->id);
+                $otherBidders_ids = Bid::where([['product_id', '=', $this->id], ['user_id', '!=', $this->maxBidder()->id]])->get()->pluck('user_id');
+                $otherBidders= User::whereIn('id', $otherBidders_ids)->get();
+                dd($otherBidders->pluck('username'));
                 $admins = User::where('role_id', '=', 1)->get();
                 $ordersURL= route('orders.index');
                 // foreach($admins as $user) {

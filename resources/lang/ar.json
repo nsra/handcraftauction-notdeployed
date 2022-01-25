@@ -360,6 +360,7 @@
     "fail to delete product": "فشل حذف المنتج",
     "You are blocked": "أنت محظور.",
     "cant delete bid in last 10 hours of auction": "لا يمكنك حذف العرض في آخر 10 ساعات للمزاد.",
+    "cant update bid in last 10 hours of auction": "لا يمكنك تعديل العرض في آخر 10 ساعات للمزاد.",
     "bid deleted successfuly": "تم حذف العرض بنجاح.",
     "fail to delete bid": "فشل حذف العرض.",
     "bid updated successfully": "تم تعديل العرض بنجاح.",
@@ -459,8 +460,8 @@
     "Wool Yarn": "لفة صوف",
     "1. Content: 100% Extraordinarily Luxurious Merino wool 2. Specification: 127yd / 116 m ( 1.76 oz / 50 g ), Needle Size: 4-8mm, 1 ball * 50g. 3. Excellent Sourcing: Merino wool is a material derived from Merino sheep and is known for its outstanding characteristics including its excellent softness, gloss and breathability. Merino wool yarn is softer, thinner and warmer than many others.": "1. المحتوى: 100٪ صوف ميرينو فاخر للغاية 2. المواصفات: 127yd / 116 م (1.76 أونصة / 50 جم) ، مقاس الإبرة: 4-8 مم ، كرة واحدة * 50 جم. 3. مصادر ممتازة: صوف ميرينو هو مادة مشتقة من خراف ميرينو وهي معروفة بخصائصها المتميزة بما في ذلك النعومة الممتازة واللمعان والتهوية. خيوط صوف ميرينو أنعم وأرق وأكثر دفئًا من خيوط كثيرة أخرى.",
     "Other": "أخرى",
-    "other types": "أنواع أخرى"
-        
-
+    "other types": "أنواع أخرى",
+    " had updated his bid on: << ": " عدل عرضه على << ",
+    "Bid has updated": "تم تعديل أحد العروض"
 
     }
