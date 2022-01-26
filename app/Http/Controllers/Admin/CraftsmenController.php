@@ -36,6 +36,9 @@ class CraftsmenController extends Controller
 
     public function show($id)
     {
+        if(User::findOrFail($id)->is_delete == 1)
+        return redirect()->back()->with('error', 'the user you want to reach is blocked');
+
         return view('admin.craftsmen.show', [
             'craftsman' => User::findOrFail($id),
         ]);
@@ -80,6 +83,13 @@ class CraftsmenController extends Controller
         return view('admin.craftsmen.bid_product_craftsman', compact('bids', 'product', 'craftsman'));
     }
 
+
+    public function delete($id)
+    {
+        $craftsman = User::find($id);
+        return view('admin.craftsmen.delete', compact('craftsman'));
+    }
+
     public function destroy($id)
     {
         try {
@@ -87,15 +97,10 @@ class CraftsmenController extends Controller
             if ($craftsman->products->count() > 0) $craftsman->products()->delete();
             $craftsman->is_delete= 1;
             $craftsman->update();
-            return redirect()->back()->with('success', 'craftsman deleted successfuly');
+            return redirect()->route('craftsmen.index')->with('success', 'craftsman deleted successfuly');
         } catch (\Exception $e) {
-            return redirect()->back()->with('error', 'fail to delete craftsman');
+            return redirect()->route('craftsmen.index')->with('error', 'fail to delete craftsman');
         }
     }
 
-    public function delete($id)
-    {
-        $craftsman = User::find($id);
-        return view('admin.craftsmen.delete', compact('craftsman'));
-    }
 }

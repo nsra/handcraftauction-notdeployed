@@ -23,7 +23,7 @@ class RolesController extends Controller
     public function view_users($id)
     {
         $role = Role::findOrFail($id);
-        $users = $role->users;
+        $users = $role->users->where('is_delete', '=', 0);
         return view('admin.roles.users', compact('role', 'users'));
     }
 }

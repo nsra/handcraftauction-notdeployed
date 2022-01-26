@@ -5,7 +5,7 @@
         <div class="col-md-12">
             <div class="panel panel-primary">
                 <div class="panel-heading">
-                    <h3 class="panel-title"><i class="fa fa-book"></i>{{ __('Orders') }}</h3>
+                    <h3 class="panel-title"><i class="fa fa-book"></i> {{ __('Orders') }}</h3>
                 </div>
                 <div class="panel-body">
                     <table class="table table-bordered table-striped table-condensed flip-content">

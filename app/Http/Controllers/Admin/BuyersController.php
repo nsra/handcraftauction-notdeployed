@@ -36,6 +36,9 @@ class BuyersController extends Controller
 
     public function show($id)
     {
+        if(User::findOrFail($id)->is_delete == 1)
+            return redirect()->back()->with('error', 'the user you want to reach is blocked');
+
         return view('admin.buyers.show', [
             'buyer' => User::findOrFail($id),
         ]);
@@ -78,9 +81,9 @@ class BuyersController extends Controller
             if ($buyer->bids->count() > 0) $buyer->bids()->delete();
             $buyer->is_delete= 1;
             $buyer->update();
-            return redirect()->back()->with('success', 'buyer with his bids deleted successfuly');
+            return redirect()->route('buyers.index')->with('success', 'buyer with his bids deleted successfuly');
         } catch (\Exception $e) {
-            return redirect()->back()->with('error', 'fail to delete buyer');
+            return redirect()->rout('buyers.index')->with('error', 'fail to delete buyer');
         }
     }
 

@@ -60,9 +60,10 @@ class OrderController extends Controller
 
     public function view_craftsman($id)
     {
-
         $product = Order::findOrFail($id)->product;
         $user = $product->user;
+        if($user->is_delete == 1)
+            return redirect()->back()->with('error', 'the user you want to reach is blocked');
         return view('app.buyer.product_craftsman', compact('user', 'product'));
     }
 

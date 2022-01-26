@@ -61,6 +61,9 @@ class ProductController extends Controller
     public function view_craftsman($id)
     {
         $user = User::findOrFail($id);
+        if($user->is_delete == 1)
+            return redirect()->back()->with('error', 'the user you want to reach is blocked');
+
         return view('app.buyer.product_craftsman', compact('user'));
     }
 
@@ -83,6 +86,9 @@ class ProductController extends Controller
     public function view_buyer($id)
     {
         $user = Bid::findOrFail($id)->user;
+        if($user->is_delete == 1)
+            return redirect()->back()->with('error', 'the user you want to reach is blocked');
+
         $product = Bid::findOrFail($id)->product;
         return view('app.buyer.product_bid_buyer', compact('user', 'product'));
     }

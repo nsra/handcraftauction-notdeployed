@@ -19,7 +19,6 @@ class HomeController extends Controller
 
     public function buyerDashboard()
     {
-
         $authUserOrderedProducts = Product::where([['user_id', '=', auth()->user()->id], ['is_delete', '=', 1]])->count();
         $authUserWinedAuctions = Order::where('user_id', '=', auth()->user()->id)->count();
         $products = Product::where('is_delete', '=', 0)->orderBy('id', 'DESC')->paginate(8);

@@ -226,6 +226,9 @@ class ProductController extends Controller
     public function view_buyer_bids(Request $request, $id)
     {
         $user = Bid::findOrFail($id)->user;
+        if($user->is_delete == 1)
+            return redirect()->back()->with('error', 'the user you want to reach is blocked');
+
         $bids = $user->bids;
         return view('app.craftsman.buyer_bids', compact('user', 'bids'));
     }

@@ -359,6 +359,7 @@
     "product with related bids deleted successfuly": "تم حذف لمنتج والعروض المقدمة عليه بنجاح",
     "fail to delete product": "فشل حذف المنتج",
     "You are blocked": "أنت محظور.",
+    "the user you want to reach is blocked": "المستخدم الذي تحاول الوصول إليه محظور",
     "cant delete bid in last 10 hours of auction": "لا يمكنك حذف العرض في آخر 10 ساعات للمزاد.",
     "cant update bid in last 10 hours of auction": "لا يمكنك تعديل العرض في آخر 10 ساعات للمزاد.",
     "bid deleted successfuly": "تم حذف العرض بنجاح.",
