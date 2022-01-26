@@ -139,6 +139,18 @@
                                 </div>
                             </div>
 
+                            <div class="form-check">
+                                <br>
+                                <input class="form-check-input" type="checkbox" name="remember" id="remember"
+                                    {{ old('remember') ? 'checked' : '' }}>
+ 
+                                <label class="form-check-label" for="remember">
+                                    {{ __('I have read')}} <a href="/termsAndConditions">{{ __('the terms and conditions policy')}}</a>  {{ __(', I agree to it') }}
+                                </label>
+                                <br>
+                                <br>
+                            </div>
+
                             <div class="form-group row">
                                 <div class="col-md-6">
                                     <input type="hidden" id="role_id" name="role_id" value="2">
@@ -147,7 +159,7 @@
 
                             <div class="form-group row mb-0">
                                 <div class="col-md-6 offset-md-4">
-                                    <button type="submit" class="btn btn-primary">
+                                    <button type="submit" class="btn btn-warning">
                                         {{ __('Register') }}
                                     </button>
                                 </div>

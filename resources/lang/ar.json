@@ -358,6 +358,16 @@
     "fail to delete order": "فشل حذف الطلب ",
     "product with related bids deleted successfuly": "تم حذف لمنتج والعروض المقدمة عليه بنجاح",
     "fail to delete product": "فشل حذف المنتج",
+    "Craftsman - ProductsOwner": "صاحب المشغولات اليدوية - مالك المنتجات",
+    "Buyer ": "المشترى",
+    "When you receive the product you ordered; You must confirm that the order is received without problems from your orders page": "",
+    "I have read": "قرأت",
+    "the terms and conditions policy": "سياسة الشروط والأحكام",
+    ", I agree to it": "، وأنا موافق عليها",
+    "Terms And Conditions": "الشروط والأحكام",
+    "For More Details,": "لمزيد من التفاصيل",
+    "Read terms and conditions from here": "اقرأ سياسة الشروط والأحكام من هنا",
+    "Handicrafts Auction Terms And Conditions": "شروط وأحكام مزاد المشغولات اليدوية",
     "You are blocked": "أنت محظور.",
     "the user you want to reach is blocked": "المستخدم الذي تحاول الوصول إليه محظور",
     "cant delete bid in last 10 hours of auction": "لا يمكنك حذف العرض في آخر 10 ساعات للمزاد.",
@@ -464,6 +474,21 @@
     "Other": "أخرى",
     "other types": "أنواع أخرى",
     " had updated his bid on: << ": " عدل عرضه على << ",
-    "Bid has updated": "تم تعديل أحد العروض"
+    "Bid has updated": "تم تعديل أحد العروض",
+    "When you receive the product you ordered; You must confirm that the order is received without problems from your orders page": "عند استلامك المنتج الذي طلبته؛ عليك التأكيد على تمام الطلب واستلامه بدون مشاكل من صفحة طلباتك",
+    "Keep in touch with the product owner to make it easier for him to deliver your product when he orderes.": "ابقى على تواصل مع صاحب المنتج لتسهل عليه عملية توصيل المنتج إليك بعد إتمام الطلب",
+    "If you didnt reseve your order within 3 hours and the seller did not improve to communicate with you about the delay, you can contact support via the attached mail in the Contact Us section.": "إذا لم يصل طلبك إليك خلال 3 ساعات ولم يحسن البائع المعني التواصل معك بشأن التأخير يمكنك التواصل مع إدارة المزاد عبر البريد المرفق في قسم تواصل معنا.",
+    "You are responsible for your bid you add to any product, at any moment you may win the auction and the product will be converted into a request for you and shipped to you immediately after the auction ends, when your bid was the highest one on that product. Here we note to dont despair if you notice the new bids are higher than your bid, who knows! those bidders may delete their bids and you get the abortianity to win the product, moreover you can compete aggressively for the product you like by adjusting your bid at a higher bid price.": "أنت مسؤل عن عرضك الذي تضيفه على أي منتج، ففي أي لحظة قد تفوز بالمزاد ويُحول المنتج إلى طلب أنت صاحبه ويُشحن اليك فور انتهاء المزاد إذا كان عرضك هو أعلى سعر مزايدة على المنتج، وهنا ننوه أن لا تيأس إذا لاحظت قدوم مزايدات أعلى من عرضك، فمن يدري، قد يحذف أصحاب تلك المزايدات عروضهم وتحظى أنت بالمنتج، كما يمكنك التنافس بقوة على المنتج الذي يعجبك من خلال تعديل عرضك بسعر مزايدة أعلى.",
+    "When you win an auction, you must pay the total price of your bid at onece directly as soon as you receive the product, otherwise you may be reported and charged in addition to being banned from the site, as well as you must pay the amount of Order Now at once directly as soon as you received your order through this feature.": "عند فوزك بالمزاد عليك دفع نفس مبلغ المزايدة الذي فزت به دفعة واحدة مباشرة فور استلامك المنتج وإلا قد يتم الإبلاغ عنك ومحاسبتك بالإضافة لحظرك من الموقع، وكذلك عليك دفع مبلغ (الطلب الآن) كاملًا ومباشرة فور استلامك المنتج الذي طلبته عبر هذه الميزة.",
+    "You can edit or delete your bids in the duration of the product auction, but you cannot do so in the last 10 hours of the auction timer.": "يمكنك تعديل أو حذف عروضك طوال فترة مزاد المنتجات، لكن لا يمكنك فعل ذلك في الـ 10 ساعات الأخيرة لمؤقت المزاد",
+    "You may find one of your offers has been removed from your bids page, at that time the product itself and all bids on it will have been deleted by the administration.": "قد تجد أحد عروضك مزال من صفحة عروضك، وقتها يكون المنتج نفسه قد تم حذفه وجميع العروض عليه من قبَل الإدارة.",
+    "When you find a product marked (in-active) that means it is in delivery and will be deleted from the system as soon as the buyer confirms its delivary.": "عندما تجد منتجًا معلمًا بنص (غير فعال) وقتها يكون في مرحلة التسليم وسيتم حذفه من الموقع عند تأكيد المشترى من استلامه لذلك المنتج بالفعل",
+    
+    "All products you add must be totaly handmade and belong to one of the website categories, if your products is found to be not handmade, or ready-made from the market, it will be deleted and this behaviour will affect the reliability of your account and we may have to block you.": "يجب أن تكون جميع المنتجات التي تضيفها مصنوعة يدوية وتابعة لأحد تصنيفات المتجر، إذا تم ضبط أحد منتجاتك أنه غير مصنوع يدويًا، أو مجلوب جاهزًا من السوق فسيتم حذفه وهذا سيؤثر على موثوقية حسابك وربما نضطر إلى حظرك.",
+    "You have to speed up the delivery of your handmads when it ordered, within a period of no more than 3 hours, so you should pay attention the website notifications about your ordered products via your email as possible to avoid the late delivary. Delivery of products will cause annoyance to buyers which may force us to block your account and products.": "عليك التسريع في تسليم مشغولاتك عند طلبها بفترة لا تزيد عن 3 ساعات، لذا عليك الانتباه لبريدك الوارد من إشعارات الموقع بشأن منتجاتك المطلوبة حتى لا تتأخر في تسليمها، كما نتوقع أن تكون مجهز دومًا وسيله توصيل سريعة ملائمة للوصول إلى مختلف مناطق القطاع، تأخرك في تسليم المنتجات ستؤدي لانزعاج المشترين ما قد يضطرنا إلى حظر حسابك ومنتجاتك.",
+    "Keep in touch with the buyer during the delivery period to reassure him, if the product is delivered to him and he does not pay for it properly; You can contact the website support.": "ابقى على تواصل مع المشترى خلال فترة التسليم لطمأنته، وإذا سلمته المنتج ولم يحسن دفع ثمنه؛ بإمكانك التواصل مع إدارة المتجرز.",
+    "Your product will remain in the website with an (inactive) sign as long as the buyer does not confirm receipt, this may indicate problems that occurred during delivery, which affects your account reliability, so you must ask the buyer to confirm receipt of your product as soon as you confirm that it was successfully shipped to him.": "منتجك سيبقى في المتجر بعلامة (غير فعال) طالما لم يؤكد المشترى استلامه، وهذا قد يوحي إلى مشاكل حصلت أثناء التسليم ما يؤثر على موثوقية حسابك، لذلك عليك أن تطلب من المشترى أن يؤكد استلامه منتجك فور التأكد من شحنه إليه بنجاح.",
+    "You can update or delete your product as long as it has not won any bids yet, put you cannot update or delete your product, so you must check your product description when adding it and quickly review it before buyers start competing for it.": "بإمكانك تعديل منتجك أو حذفه طالما لم يحظى بأي مزايدات بعد، ما عدا ذلك فإنه لا يمكنك تفعيل أو حذف منتجك، لذا عليك التدقيق في مواصفات وصور منتجك عند إضافته والاسراع في مراجعته قبل أن يبدأ المشترين التنافس عليه.",
+    "If you miss a product from your list of products, it means that it has been deleted by the admin for not meeting the conditions of the handicraft auction.":"إذا افتقدت أحد المنتجات من قائمة منتجاتك فهذا يعنى أنه محذوف من قبَل الإدارة لعدم استيفاءه شروط مزاد المشغولات اليدوية."
 
-    }
+}

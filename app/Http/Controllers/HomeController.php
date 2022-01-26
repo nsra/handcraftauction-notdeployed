@@ -127,4 +127,10 @@ class HomeController extends Controller
     {
         return view('app.about_us');
     }
+
+    
+    public function terms_and_conditions()
+    {
+        return view('app.terms_and_conditions');
+    }
 }

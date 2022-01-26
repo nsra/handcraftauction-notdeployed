@@ -31,6 +31,7 @@ Route::namespace('App\Http\Controllers')->group(function () {
 
     Route::get('/category/{id}/products', 'HomeController@category_products')->name('category_products');
     Route::get('/about_us', 'HomeController@about_us')->name('about_us');
+    Route::get('/termsAndConditions', 'HomeController@terms_and_conditions')->name('terms_and_conditions');
     Route::get('/test_timer', 'HomeController@test_timer')->name('test_timer');
 
     Route::get('product/{id}', ['as' => 'product.details', 'uses' => 'HomeController@product_details']);

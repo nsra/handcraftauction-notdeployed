@@ -8,7 +8,7 @@
             <div class="content_about mt-3">
                 <br>
                 <div class="goal">
-                    <h3>{{ __('Goals')}}</h3>
+                    <h3><b>{{ __('Goals')}}</b></h3>
                     <i class="fas fa-check fa-1x"></i>
                     <span>{{ __('Get rid of the boring routine used to sell your handmades')}}</span><br>
                     <i class="fas fa-check "> </i>
@@ -22,8 +22,8 @@
                 </div>
                 <br>
                 <div class="category mt-3">
-                    <h3>{{ __('Handicrafts Auction Categories')}}</h3>
-                    <p>{{ __('The Handicrafts Auction products contains twelve static categories')}}</p>
+                    <h3><b>{{ __('Handicrafts Auction Categories')}}</b></h3>
+                    <h6 class="m-3">{{ __('The Handicrafts Auction products contains twelve static categories')}}</h6>
                     <div class="row">
                         <div class="col-3">
                             <div class="card" style="margin-bottom: 5%!important">
@@ -141,7 +141,7 @@
                 </div>
 
                 <div class="use mt-4">
-                    <h3>{{ __('How To Use HandicraftsAuction')}}</h3>
+                    <h3><b>{{ __('How To Use HandicraftsAuction')}}</b></h3>
                     <br>
                     <div class="card mb-3" style="max-width: 1000px;">
                         <div class="row g-0">
@@ -154,12 +154,13 @@
                             </div>
                             <div class="col-md-8">
                                 <div class="card-body">
-                                    <h4 class="card-title">{{ __('Register as Craftsman')}}</h4>
+                                    <h4 class="card-title"><b>{{ __('Register as Craftsman')}}</b></h4>
                                     <p class="card-text"> {{ __('By registering as a crafttsman you can add your handmade product for sale (ordered) by auction, or by a high OrderNow Price. you cant order a product with craftsman role, create buyer account to bid or order products')}}
                                     </p>
                                 </div>
                             </div>
                         </div>
+                       
                     </div>
                     <div class="card mb-3" style="max-width: 1000px;">
                         <div class="row g-0">
@@ -172,16 +173,21 @@
                             </div>
                             <div class="col-md-8">
                                 <div class="card-body">
-                                    <h4 class="card-title">{{ __('Register as Buyer')}}</h4>
+                                    <h4 class="card-title"><b>{{ __('Register as Buyer')}}</b></h4>
                                     <p class="card-text">{{ __('By registering as a buyer you can order-now and place bidds to order products by auction, after you success orderring aproduct you have to confirm its shipping from your orders panel you cant list your own products with buyer role, creat buyer account to list your handmades.')}}
                                     </p>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <h4 class="m-3">
+                        <b>        
+                           {{__('For More Details,')}}<a href="/termsAndConditions"> {{ __('Read terms and conditions from here')}}</a>
+                        </b>
+                    </h4>
                 </div>
                 <div class="Future mt-5">
-                    <h3>{{ __('Handicrafts Auction Features')}}</h3>
+                    <h3><b>{{ __('Handicrafts Auction Features')}}</b></h3>
                     <br>
                     <i class="fas fa-check fa-2x">
                     </i> <span>{{ __('Free shipping.')}}</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -192,7 +198,7 @@
                 </div>
                 <div class="our-team mt-4">
                     <br>
-                    <h3>{{ __('Handicrafts Auction Team')}}</h3>
+                    <h3><b>{{ __('Handicrafts Auction Team')}}</b></h3>
                     <br>
                     <div class="row">
                         <div class="col ">
@@ -206,7 +212,7 @@
                         </div>
                         <div class="col">
                             <div class="card" style="width: 300px;">
-                                <img src="{{ asset('/HandicraftsAuction/image/Amany.jfif') }}" class="card-img-top"
+                                <img src="{{ asset('/HandicraftsAuction/image/Amany.jpg') }}" class="card-img-top"
                                     alt="...">
                                 <div class="card-body">
                                     <h4 class="card-text text-center">Amany Fadel Herez</h4>
