@@ -3,7 +3,7 @@
     <div class="modal-body">
         @csrf
         @method('DELETE')
-        <h5 class="text-center">{{ __('Are you sure you have received your ordered product:')}} {{ $order->product->title }} ?
+        <h5 class="text-center">{{ __('Are you sure you have received your ordered product:')}} {{ __($order->product->title) }} ?
         </h5>
     </div>
     <div class="modal-footer">
