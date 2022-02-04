@@ -256,6 +256,7 @@
     "Show product Bids": "إظهار عروض المنتج",
     "Starting Bid Price": "سعر أول عرض ممكن",
     "Yes, Delete Order":"نعم، احذف",
+    "When adding a product, you have to take care of choosing the buy-now price, as the system will depend on it to calculate the starting bid price for your product’s auction (40% of the buy-now price), as well as calculate the minimum possible bid increment between every two bids (6% of the purchase price now) and thus calculate The minimum value for the prices of all possible bids. Therefore, the higher the buy-now price of your product, the more chance you will have to sell the product at a higher price, whether through the buy-now price itself or through the auction.": "عند إضافة منتج عليك الاعتناء باختيار سعر الشراء الآن، إذ سيعتمد النظام على هذا السعر لحساب سعر أول عرض ممكن لمزاد منتجك (٤٠% من سعر الشراء الان)، وكذلك حساب اقل مزايدة ممكنه بين كل عرضين (6% من سعر الشراء الان) وبالتالي حساب اقل قيمة لاسعار جميع العروض الممكن تقديمها. لذلك كلما كان سعر الشراء الان لمنتجك مرتفعًا أكثر ستحظى بفرصه أكبر لبيع المنتج بسعر أعلى، سواء عبر سعر الشراء الآن نفسه أو عبر المزاد.",
     "StartingBid:": "أول عرض ممكن:",
     "The Handicrafts Auction products contains twelve static categories": "مزاد المشغولات اليديوية يشمل 12 تصنيف للمنتجات المختلفة.",
     "The Product Has Blocked": " المنتج غير فعال ",
