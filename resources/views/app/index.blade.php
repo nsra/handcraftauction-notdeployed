@@ -182,30 +182,30 @@
 @section('script')
 <script>
   function startTimer(seconds, display) {
-      function timer() {
-          var days        = Math.floor(seconds/24/60/60);
-          var hoursLeft   = Math.floor((seconds) - (days*86400));
-          var hours       = Math.floor(hoursLeft/3600);
-          var minutesLeft = Math.floor((hoursLeft) - (hours*3600));
-          var minutes     = Math.floor(minutesLeft/60);
-          var remainingSeconds = seconds % 60;
-          function pad(n) {
-              return (n < 10 ? "0" + n : n);
-          }
-          display.textContent = pad(days) + ":" + pad(hours) + ":" + pad(minutes) + ":" + pad(remainingSeconds);
-          if (seconds == 0) {
-              display.textContent = "Expired";
-              location.reload();
-          } else {
-              seconds--;
-          }
-      };
-      timer();
-      setInterval(timer, 1000);
+    function timer() {
+      var days        = Math.floor(seconds/24/60/60);
+      var hoursLeft   = Math.floor((seconds) - (days*86400));
+      var hours       = Math.floor(hoursLeft/3600);
+      var minutesLeft = Math.floor((hoursLeft) - (hours*3600));
+      var minutes     = Math.floor(minutesLeft/60);
+      var remainingSeconds = seconds % 60;
+      function pad(n) {
+        return (n < 10 ? "0" + n : n);
+      }
+      display.textContent = pad(days) + ":" + pad(hours) + ":" + pad(minutes) + ":" + pad(remainingSeconds);
+      if (seconds == 0) {
+        display.textContent = "Expired";
+        location.reload();
+      } else {
+          seconds--;
+      }
+    };
+    timer();
+    setInterval(timer, 1000);
   }
 
   function removeBackdrop(){
-      $('.modal-backdrop').remove();
+    $('.modal-backdrop').remove();
   }
     
 $(document).on('click', '#smallButton', function(event) {

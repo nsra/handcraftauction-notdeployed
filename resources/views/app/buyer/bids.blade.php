@@ -56,19 +56,21 @@
                                 data-attr="{{ route('buyer.bid.edit', $bid->id) }}" title="{{__('Update Bid')}}">
                                 <i class="fa fa-edit fa-lg"></i>
                             </a>
-                            <a data-toggle="modal" class="btn btn-lg pl-0" id="smallButton" data-target="#smallModal"
+                            {{-- <a data-toggle="modal" class="btn btn-lg pl-0" id="smallButton" data-target="#smallModal"
                                 data-attr="{{ route('buyer.bid.delete', $bid->id) }}" title="{{__('Delete Bid')}}">
                                 <i class="fa fa-trash text-danger fa-lg"></i>
+                            </a> --}}
+                            <a data-toggle="modal" class="btn btn-lg smallButton" data-target="#smallModal"
+                                data-attr="{{ route('buyer.bid.delete', $bid->id) }}" title="{{__("Delete Bid")}}">
+                                <i class="fa fa-trash text-danger fa-lg"></i>
                             </a>
+
                         @endif                          
                         </div>                            
                     </div>
                     <hr>
                 @endforeach
-
-
             </div>
-
         </div>
       
         {{ $bids->links('pagination::bootstrap-4') }}
