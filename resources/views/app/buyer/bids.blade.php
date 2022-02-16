@@ -52,8 +52,7 @@
                                 data-attr="{{ route('bid.history', $bid->id) }}" title="{{__('Bid History')}}">
                                 <i class="fa fa-history"> </i>
                             </a>
-                            <a data-toggle="modal" class="btn btn-lg smallButton" data-target="#smallModal"
-                                data-attr="{{ route('buyer.bid.edit', $bid->id) }}" title="{{__('Update Bid')}}">
+                            <a href="{{ route('buyer.product.show', $bid->product->id) }}" class="btn btn-lg ">
                                 <i class="fa fa-edit fa-lg"></i>
                             </a>
                             {{-- <a data-toggle="modal" class="btn btn-lg pl-0" id="smallButton" data-target="#smallModal"
