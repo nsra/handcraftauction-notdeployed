@@ -154,19 +154,19 @@ class Product extends Model
                 $product = Order::where('product_id', '=', $this->id)->first()->product;
                 $otherBidders_ids = Bid::where([['product_id', '=', $this->id], ['user_id', '!=', $this->maxBidder()->id]])->get()->pluck('user_id');
                 $otherBidders= User::whereIn('id', $otherBidders_ids)->get();
-                dd($otherBidders->pluck('username'));
+                // dd($otherBidders->pluck('username'));
                 $admins = User::where('role_id', '=', 1)->get();
                 $ordersURL= route('orders.index');
 
-                foreach($admins as $user) {
-                    Mail::raw(trans("There was a new order <<").trans($product->title).trans(">>, ")."\n \n".trans("Please check the system orders: ")."\n".$ordersURL, function ($mail) use ($user) {
+                foreach($admins as $admin) {
+                    Mail::raw(trans("There was a new order <<").trans($product->title).trans(">>, ")."\n \n".trans("Please check the system orders: ")."\n".$ordersURL, function ($mail) use ($admin) {
                         $mail->from('laraveldemo2018@gmail.com', trans('Handicrafts Auction'));
-                        $mail->to($user->email)
+                        $mail->to($admin->email)
                             ->subject(trans('There was a new order'));
                     });
                 }
                 foreach($otherBidders as $otherBidder){
-                    Mail::raw($otherBidder->username.trans(" had won the auction on: << ") . trans($product->title) . trans(" >>."), function ($mail) use ($otherBidder) {
+                    Mail::raw($user->username.trans(" had won the auction on: << ") . trans($product->title) . trans(" >>."), function ($mail) use ($otherBidder) {
                         $mail->from('laraveldemo2018@gmail.com', trans('Handicrafts Auction'));
                         $mail->to($otherBidder->email)
                             ->subject(trans('Auction has finished'));
@@ -181,7 +181,7 @@ class Product extends Model
                 Mail::raw(trans("Congrats 🎉, Your product: << ") . trans($product->title) . trans(" >> has been ordered by the bidder auction winner:") . $user->username . trans(", You have 3 hours to deliver it to him,")." \n \n". trans(" Please check Your Ordered Products Panel to get the buyer address:")."\n".route('craftsman.ordered_products'). "\n". trans(" When you deliver buyer the product ask him to confirm the product delivery from the website immediately as he received it."), function ($mail) use ($craftsman) {
                     $mail->from('laraveldemo2018@gmail.com', trans('Handicrafts Auction'));
                     $mail->to($craftsman->email)
-                        ->subject(trans('Your Have New Ordered Product'));
+                        ->subject(trans('You Have New Ordered Product'));
                 });
 
                 if (auth()->user() && $this->maxBidder()->id == auth()->user()->id) {

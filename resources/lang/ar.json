@@ -440,6 +440,7 @@
     " had won the auction on: << ": " فاز بمزاد المنتج << ",
     " >>.": " >>.",
     "Auction has finished": "أحد المزادات انتهى",
+    "You had won new auction 🎉": "لقد فزت بمزاد جديد",
     "Congrats 🎉, You had won new auction, its for product: << ": "تهانينا  🎉، فد فزت بمزاد جديد للمنتج: << ",
     " >> has been ordered by the bidder auction winner:": " >> طلبه المزاود الفائز: ",
     ", You have 3 hours to deliver it to him,": " لديك 3 ساعات لتسلمه المنتج،",
@@ -448,6 +449,7 @@
     "Congrats 🎉, You win the auction on: << ": "تهانينا 🎉، لقد فزت بمزاد المنتج: << ",
     " >> the product will deliver within 3 hours, please check Your Orders Panel.": " >> سيتم تسليمك المنتج خلال 3 ساعات، الرجاء مراجعة صفحة طلباتك.",
     "Congrats 🎉, ": "تهانينا 🎉، ",
+    " >>, The product will deliver within 3 hours,": "سيتم تسليم المنتج خلال 3 ساعات",
     " wins the acution on Your product: << ": " فاز بمزاد منتجك: << ",
     " >>, Check your Ordered Products panel, you have to deliver him the product within 3 hours": "  >> راجع صفحة منتجاتك المطلوبة، عليك تسليمه المنتج خلال 3 ساعات",
     " wins the acution on: << ": " فاز بمزاد المنتج <<",
