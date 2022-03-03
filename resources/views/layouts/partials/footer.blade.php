@@ -4,6 +4,6 @@
             &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp;
             <a href="/termsAndConditions"> {{ __('Terms And Conditions')}} </a>
             &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp;
-            &copy; {{ date('Y') }} Eng. Entesar K. ElBanna & Amany F. Herez
+            &copy; {{ date('Y') }} Eng. Entesar K. ElBanna 
         </div>
 </footer>
