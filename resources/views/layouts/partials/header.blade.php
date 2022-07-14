@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light shadow-sm p-2 {{app()->getLocale() == 'en' ? 'ltr' : 'rtl' }}">
     <div class="container-fluid">
-        <a class="navbar-brand" href="/index"><img src="{{ asset('/HandicraftsAuction/image/auction.PNG') }}"
+        <a class="navbar-brand" href="/index"><img src="{{ asset('/HandicraftsAuction/image/auction.jpg') }}"
                 width="50px" height="50px" alt="" class="p-0">&nbsp;&nbsp;{{ __('HandicraftsAuction')}}</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -12,9 +12,9 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="/index">{{ __('Home')}}</a>
                     </li>
-                    <li class="nav-item">
+                    {{-- <li class="nav-item">
                         <a class="nav-link" href="/about_us">{{ __('About')}}</a>
-                    </li>
+                    </li> --}}
 
                     @if (auth()->user() && Auth::user()->role->name === 'Buyer')
                         <li class="nav-item">

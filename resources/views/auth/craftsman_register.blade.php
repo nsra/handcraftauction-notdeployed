@@ -139,7 +139,7 @@
                                 </div>
                             </div>
 
-                            <div class="form-check">
+                            {{-- <div class="form-check">
                                 <br>
                                 <input class="form-check-input" type="checkbox" name="remember" id="remember"
                                     {{ old('remember') ? 'checked' : '' }}>
@@ -149,7 +149,7 @@
                                 </label>
                                 <br>
                                 <br>
-                            </div>
+                            </div> --}}
 
                             <div class="form-group row">
                                 <div class="col-md-6">

@@ -203,20 +203,12 @@
                     <div class="row">
                         <div class="col ">
                             <div class="card" style="width: 300px; margin-left: 230px;">
-                                <img src="{{ asset('/HandicraftsAuction/image/entesar.jpeg') }}" class="card-img-top"
-                                    alt="...">
-                                <div class="card-body">
-                                    <h4 class="card-text text-center"> Entesar Khaled ElBanna </h4>
-                                </div>
+                               
                             </div>
                         </div>
                         <div class="col">
                             <div class="card" style="width: 300px;">
-                                <img src="{{ asset('/HandicraftsAuction/image/Amany.jpg') }}" class="card-img-top"
-                                    alt="...">
-                                <div class="card-body">
-                                    <h4 class="card-text text-center">Amany Fadel Herez</h4>
-                                </div>
+                               
                             </div>
                         </div>
                     </div>

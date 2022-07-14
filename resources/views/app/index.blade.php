@@ -10,30 +10,30 @@
           </button>
           <div class="collapse navbar-collapse" id="main-nav">
             <ul class="navbar-nav" style="font-size: 16px">
-              
               <li class="nav-item">
-                <a class="nav-link" href="/category/1/products">{{ __('Painting')}}</a>
+                <a class="nav-link" href="/category/1/products">{{ __('Salade')}}</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/category/2/products">{{ __('Paper')}}  &nbsp; </a>
+                <a class="nav-link" href="/category/2/products">{{ __('Soup')}}  &nbsp; </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/category/3/products">{{ __('Embroidery')}}  &nbsp; </a>
-              <li class="nav-item">
-                <a class="nav-link" href="/category/4/products">{{ __('Wool')}}  &nbsp; </a>
+                <a class="nav-link" href="/category/3/products">{{ __('Sweets')}}  &nbsp; </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/category/5/products">{{ __('Wood')}}  &nbsp; </a>
+                <a class="nav-link" href="/category/4/products">{{ __('Sundae')}}  &nbsp; </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/category/6/products">{{ __('Bead')}}  &nbsp; </a>
-              <li class="nav-item">
-                <a class="nav-link" href="/category/7/products">{{ __('NaturalResources')}}  &nbsp; </a>
+                <a class="nav-link" href="/category/5/products">{{ __('Pastries')}}  &nbsp; </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/category/8/products">{{ __('Leather')}}  &nbsp; </a>
+                <a class="nav-link" href="/category/6/products">{{ __('FastFood')}}  &nbsp; </a>
+              <li class="nav-item">
+                <a class="nav-link" href="/category/7/products">{{ __('TraditionalFood')}}  &nbsp; </a>
               </li>
               <li class="nav-item">
+                <a class="nav-link" href="/category/8/products">{{ __('Other')}}  &nbsp; </a>
+              </li>
+              {{-- <li class="nav-item">
                 <a class="nav-link" href="/category/9/products">{{ __('Plastic')}}  &nbsp; </a>
               </li>
               <li class="nav-item">
@@ -47,7 +47,7 @@
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="/category/19/products">{{ __('Other')}}  &nbsp; </a>
-              </li>
+              </li> --}}
             </ul>
           </div>
         </nav>
@@ -95,7 +95,7 @@
           @if($product->is_delete==0)
           <div class="col-3 col-3 mb-4 mt-4">
             <div class="card">
-              @if(!$product->isExpired())
+              {{-- @if(!$product->isExpired())
               <div id="countdown" class="clock{{ $product->id }} timer text-center"></div>
               <script>
                 window.addEventListener('load', function() {
@@ -104,12 +104,12 @@
                     startTimer(duration{{ $product->id }}, display);
                 });
               </script>
-              @else 
-              <div id="countdown" class="timer">{{ __('Expired')}}</div>
-              @php 
+              @else  --}}
+              <div id="countdown" class="timer"> {{$product->user->username}} : {{ __('store')}}</div>
+              {{-- @php 
                 $product->order_by_auction()
-              @endphp
-              @endif
+              @endphp --}}
+              {{-- @endif --}}
               <a href="{{route('product.details', $product->id) }}">
                 <img src="{{asset($product->images->first()->path)}}" class="card-img-top" alt="...">
               </a>
@@ -133,7 +133,7 @@
                   @endif
                 </div>
                 <br>
-                @if($product->bids->count() === 0) 
+                {{-- @if($product->bids->count() === 0) 
                 <p>{{__('StartingBid:')}} {{$product->startingBidPrice()}}$</p>
                 @else
                 <p>{{ __('MaxBid:')}} {{$product->maxBidPrice()}}$</p>
@@ -149,7 +149,7 @@
                   style="background-color: #ffbb00; color:black; width:55%" >
                   {{ auth()->user() && $product->bids->contains('user_id', Auth::user()->id) ? __('You Bid!') : __('Place Bid')}}
                 </button>
-                @endif
+                @endif --}}
               </div>
             </div>
           </div>
@@ -181,28 +181,28 @@
 
 @section('script')
 <script>
-  function startTimer(seconds, display) {
-    function timer() {
-      var days        = Math.floor(seconds/24/60/60);
-      var hoursLeft   = Math.floor((seconds) - (days*86400));
-      var hours       = Math.floor(hoursLeft/3600);
-      var minutesLeft = Math.floor((hoursLeft) - (hours*3600));
-      var minutes     = Math.floor(minutesLeft/60);
-      var remainingSeconds = seconds % 60;
-      function pad(n) {
-        return (n < 10 ? "0" + n : n);
-      }
-      display.textContent = pad(days) + ":" + pad(hours) + ":" + pad(minutes) + ":" + pad(remainingSeconds);
-      if (seconds == 0) {
-        display.textContent = "Expired";
-        location.reload();
-      } else {
-          seconds--;
-      }
-    };
-    timer();
-    setInterval(timer, 1000);
-  }
+  // function startTimer(seconds, display) {
+  //   function timer() {
+  //     var days        = Math.floor(seconds/24/60/60);
+  //     var hoursLeft   = Math.floor((seconds) - (days*86400));
+  //     var hours       = Math.floor(hoursLeft/3600);
+  //     var minutesLeft = Math.floor((hoursLeft) - (hours*3600));
+  //     var minutes     = Math.floor(minutesLeft/60);
+  //     var remainingSeconds = seconds % 60;
+  //     function pad(n) {
+  //       return (n < 10 ? "0" + n : n);
+  //     }
+  //     display.textContent = pad(days) + ":" + pad(hours) + ":" + pad(minutes) + ":" + pad(remainingSeconds);
+  //     if (seconds == 0) {
+  //       display.textContent = "Expired";
+  //       location.reload();
+  //     } else {
+  //         seconds--;
+  //     }
+  //   };
+  //   timer();
+  //   setInterval(timer, 1000);
+  // }
 
   function removeBackdrop(){
     $('.modal-backdrop').remove();

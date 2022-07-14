@@ -9,46 +9,47 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="main-nav">
-                        <ul class="navbar-nav " style="font-size: 16px">
-                            <li class="nav-item">
-                                <a class="nav-link" href="/category/1/products" >{{ __('Painting')}}</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/category/2/products">{{ __('Paper')}} &nbsp; </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/category/3/products">{{ __('Embroidery')}} &nbsp; </a>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/category/4/products">{{ __('Wool')}} &nbsp; </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/category/5/products">{{ __('Wood')}} &nbsp; </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/category/6/products">{{ __('Bead')}} &nbsp; </a>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/category/7/products">{{ __('NaturalResources')}} &nbsp; </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/category/8/products">{{ __('Leather')}} &nbsp; </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/category/9/products">{{ __('Plastic')}} &nbsp; </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/category/10/products">{{ __('Glass')}} &nbsp; </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/category/11/products">{{ __('Clay')}} &nbsp; </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/category/12/products">{{ __('Metals')}} &nbsp; </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/category/19/products">{{ __('Other')}} &nbsp; </a>
-                            </li>
+                        <ul class="navbar-nav" style="font-size: 16px">
+                          <li class="nav-item">
+                            <a class="nav-link" href="/category/1/products">{{ __('Salade')}}</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="/category/2/products">{{ __('Soup')}}  &nbsp; </a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="/category/3/products">{{ __('Sweets')}}  &nbsp; </a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="/category/4/products">{{ __('Sundae')}}  &nbsp; </a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="/category/5/products">{{ __('Pastries')}}  &nbsp; </a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="/category/6/products">{{ __('FastFood')}}  &nbsp; </a>
+                          <li class="nav-item">
+                            <a class="nav-link" href="/category/7/products">{{ __('TraditionalFood')}}  &nbsp; </a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="/category/8/products">{{ __('Other')}}  &nbsp; </a>
+                          </li>
+                          {{-- <li class="nav-item">
+                            <a class="nav-link" href="/category/9/products">{{ __('Plastic')}}  &nbsp; </a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="/category/10/products">{{ __('Glass')}}  &nbsp; </a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="/category/11/products">{{ __('Clay')}}  &nbsp; </a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="/category/12/products">{{ __('Metals')}}  &nbsp; </a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="/category/19/products">{{ __('Other')}}  &nbsp; </a>
+                          </li> --}}
                         </ul>
-                    </div>
+                      </div>
                 </nav>
             </header>
         </div>
@@ -94,65 +95,64 @@
                     @foreach ($products as $product)
                     @if($product->is_delete==0)
                     <div class="col-3 col-3 mb-4 mt-4">
-                      <div class="card">
-                        @if(!$product->isExpired())
-                        <div id="countdown" class="clock{{ $product->id }} timer text-center"></div>
-                        <script>
-                          window.addEventListener('load', function() {
-                              var duration{{ $product->id }} = {{$product->remainingTime()}},
-                              display = document.querySelector('.clock{{ $product->id }}');
-                              startTimer(duration{{ $product->id }}, display);
-                          });
-                        </script>
-                        @else 
-                        <div id="countdown" class="timer">{{ __('Expired')}}</div>
-                       
-                        @php 
-                          $product->order_by_auction()
-                        @endphp
-                        @endif
-                        <a href="{{route('product.details', $product->id) }}">
-                          <img src="{{asset($product->images->first()->path)}}" class="card-img-top" alt="...">
-                        </a>
-                        <div class="card-body">
-                          <h5 class="text-center">{{__($product->title)}}</h5>
-                          <div class="d-flex justify-content-between">
-                            <span>${{$product->orderNowPrice}}</span>
-                            @if(!auth()->user() || (auth()->user() && auth()->user()->id != $product->user_id))
-                            <button class="btn btn-secondary btn-sm" onclick="window.location='{{route('buyer.order_now', $product->id) }}'" >
-                              {{ __('Order Now')}}
-                            </button>
-                            @elseif(auth()->user() && auth()->user()->id == $product->user_id && !$product->is_delete && !$product->isAuctioned())
-                            <div>
-                              <button onclick="window.location='{{route('craftsman.product.edit', $product->id)}}'" class="btn btn-dark btn-sm" data-value="{{$product->id}}">
-                                <i class="far fa-edit"></i>
-                              </button>
-                              <a data-toggle="modal" class="btn btn-danger btn-sm" id="smallButton" data-target="#smallModal" data-attr="{{ route('craftsman.product.delete_out', $product->id) }}" title="{{ __('Delete Product')}}">
-                                <i class="fas fa-trash text-danger fa-lg"></i>
-                              </a> 
-                            </div>
-                            @endif
-                          </div>
-                          <br>
-                          @if($product->bids->count() === 0) 
-                            <p>{{__('StartingBid:')}} {{$product->startingBidPrice()}}$</p>
-                          @else
-                            <p>{{ __('MaxBid:')}} {{$product->maxBidPrice()}}$</p>
-                          @endif
-                          <button class="btn text-center btn-light">{{$product->bids->count()}} {{ __('Bids')}}</button>
-                          @if(auth()->user() && auth()->user()->id == $product->user_id)
-                            <button class="btn text-center btn-warning" 
+                        <div class="card">
+                            {{-- @if(!$product->isExpired())
+                            <div id="countdown" class="clock{{ $product->id }} timer text-center"></div>
+                            <script>
+                              window.addEventListener('load', function() {
+                                  var duration{{ $product->id }} = {{$product->remainingTime()}},
+                                  display = document.querySelector('.clock{{ $product->id }}');
+                                  startTimer(duration{{ $product->id }}, display);
+                              });
+                            </script>
+                            @else  --}}
+                            <div id="countdown" class="timer"> {{$product->user->username}} : {{ __('store')}}</div>
+                            {{-- @php 
+                              $product->order_by_auction()
+                            @endphp --}}
+                            {{-- @endif --}}
+                            <a href="{{route('product.details', $product->id) }}">
+                              <img src="{{asset($product->images->first()->path)}}" class="card-img-top" alt="...">
+                            </a>
+                            <div class="card-body">
+                              <h5 class="text-center">{{__($product->title)}}</h5>
+                              <div class="d-flex justify-content-between">
+                                <span>${{$product->orderNowPrice}}</span>
+                                @if(!auth()->user() || (auth()->user() && auth()->user()->id != $product->user_id))
+                                <button class="btn btn-secondary btn-sm" onclick="window.location='{{route('buyer.order_now', $product->id) }}'" >
+                                  {{ __('Order Now')}}
+                                </button>
+                                @elseif(auth()->user() && auth()->user()->id == $product->user_id && !$product->is_delete && !$product->isAuctioned())
+                                <div>
+                                  <button onclick="window.location='{{route('craftsman.product.edit', $product->id)}}'" class="btn btn-dark btn-sm" data-value="{{$product->id}}">
+                                    <i class="far fa-edit"></i>
+                                  </button>
+                                  <a data-toggle="modal" class="btn btn-danger btn-sm" id="smallButton" data-target="#smallModal" data-attr="{{ route('craftsman.product.delete_out', $product->id) }}" title="{{ __('Delete Product')}}">
+                                    <i class="fas fa-trash text-danger fa-lg"></i>
+                                  </a> 
+                                </div>
+                                @endif
+                              </div>
+                              <br>
+                              {{-- @if($product->bids->count() === 0) 
+                              <p>{{__('StartingBid:')}} {{$product->startingBidPrice()}}$</p>
+                              @else
+                              <p>{{ __('MaxBid:')}} {{$product->maxBidPrice()}}$</p>
+                              @endif
+                              <button class="btn text-center btn-light">{{$product->bids->count()}} {{ __('Bids')}}</button>
+                              @if(auth()->user() && auth()->user()->id == $product->user_id)
+                              <button class="btn text-center btn-warning" 
                                 style="background-color: #ffbb00; color:black; width:55%" >
                                 {{ __('Your Product!')}}
-                            </button>
-                          @else
-                          <button class="btn text-center btn-warning" onclick="window.location='{{route('buyer.place_bid', $product->id) }}'" 
-                            style="background-color: #ffbb00; color:black; width:55%" >
-                            {{ auth()->user() && $product->bids->contains('user_id', Auth::user()->id) ? __('You Bid!') : __('Place Bid')}}
-                          </button>
-                          @endif
-                        </div>
-                      </div>
+                              </button>
+                              @else
+                              <button class="btn text-center btn-warning" onclick="window.location='{{route('buyer.place_bid', $product->id) }}'" 
+                                style="background-color: #ffbb00; color:black; width:55%" >
+                                {{ auth()->user() && $product->bids->contains('user_id', Auth::user()->id) ? __('You Bid!') : __('Place Bid')}}
+                              </button>
+                              @endif --}}
+                            </div>
+                          </div>
                     </div>
                     @endif
                     @endforeach

@@ -137,6 +137,7 @@ class Product extends Model
             });
 
             return redirect()->back();//->with('success', 'The Acution on: << ' . trans($this->title) . ' >> has been extended automaticlly due to No Bids');
+        
         } else if ($this->not_ordered() && $this->isAuctioned() && $this->isExpired()) {
             $product = Product::findOrFail($this->id);
             $order = Order::create([

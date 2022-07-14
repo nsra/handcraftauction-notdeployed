@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 07, 2022 at 12:00 PM
+-- Generation Time: Mar 05, 2022 at 08:24 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.3.27
 
@@ -44,7 +44,8 @@ CREATE TABLE `bids` (
 INSERT INTO `bids` (`id`, `user_id`, `price`, `product_id`, `description`, `created_at`, `updated_at`) VALUES
 (31, 8, 163.00, 73, 'i will get it', '2021-12-26 18:46:09', '2022-01-03 15:56:33'),
 (34, 20, 150.00, 73, 'i am ready to pay', '2021-12-28 04:58:54', '2021-12-28 04:58:54'),
-(42, 8, 20.00, 117, 'i think it doesnt coast more than 20$', '2022-01-07 05:07:55', '2022-01-07 05:24:52');
+(42, 8, 20.00, 117, 'i think it doesnt coast more than 20$', '2022-01-07 05:07:55', '2022-01-07 05:24:52'),
+(43, 20, 25.00, 117, 'i will get it', '2022-03-04 17:02:40', '2022-03-04 17:02:40');
 
 -- --------------------------------------------------------
 
@@ -72,7 +73,8 @@ INSERT INTO `bidupdates` (`id`, `price`, `description`, `bid_id`, `created_at`, 
 (6, 170.00, 'i will get it with the updated bid 170$', 34, '2022-01-01 08:50:59', NULL),
 (16, 163.00, 'i will get it', 31, '2022-01-03 15:56:33', '2022-01-03 15:56:33'),
 (23, 12.00, 'this wool is usefull', 42, '2022-01-07 05:07:55', '2022-01-07 05:07:55'),
-(24, 20.00, 'i think it doesnt coast more than 20$', 42, '2022-01-07 05:24:52', '2022-01-07 05:24:52');
+(24, 20.00, 'i think it doesnt coast more than 20$', 42, '2022-01-07 05:24:52', '2022-01-07 05:24:52'),
+(25, 25.00, 'i will get it', 43, '2022-03-04 17:02:40', '2022-03-04 17:02:40');
 
 -- --------------------------------------------------------
 
@@ -235,7 +237,7 @@ CREATE TABLE `password_resets` (
 
 INSERT INTO `password_resets` (`email`, `token`, `created_at`) VALUES
 ('laraveldemo2018@gmail.com', '$2y$10$EwXpHFwaSwiUu9PObP9creXsF9MbiK85Zll2tn9ZOZH1POZflYRMO', '2021-11-17 17:04:07'),
-('entesar.2000banna@gmail.com', '$2y$10$luOQk6qXZjNKHYkPfPz.2uaPp7f5ljbhqCPlJ2wjTSluXFAxrlQmK', '2022-01-07 08:45:35');
+('entesar.2000banna@gmail.com', '$2y$10$aV0oD4zYcHdwT8zyH3QQl.8DnJ1OlolJIR8JphIkxyjiWln2Sr1Je', '2022-03-05 04:54:02');
 
 -- --------------------------------------------------------
 
@@ -280,13 +282,13 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `title`, `description`, `category_id`, `orderNowPrice`, `is_delete`, `start_auction`, `end_auction`, `created_at`, `updated_at`, `user_id`) VALUES
-(67, 'Fuyit Natural Wood Slices', 'Natural & Original: Wood Circles are made of natural wood with barks, have a rustic beauty and are in good shape. Some wood bark may fall partially from the slices.', 5, 80.00, 0, '2021-12-08 17:22:56', '2022-01-20 07:49:55', '2021-12-08 17:22:56', '2022-01-06 05:54:47', 4),
-(68, 'Best Kit With No Tools Needed', 'Whether you are a jewelry making aficionado or just wanting to start a new hobby, a jewelry making kit is a must-have. These kits come will all the supplies you need to make earrings, necklaces, bracelets, anklets, and more, while also coming in handy when fast, timely repairs are needed.Whether you are a jewelry making aficionado or just wanting to start a new hobby, a jewelry making kit is a must-have. These kits come will all the supplies you need to make earrings, necklaces, bracelets, anklets, and more, while also coming in handy when fast, timely repairs are needed.', 6, 99.99, 0, '2021-12-08 17:28:25', '2022-01-20 17:28:25', '2021-12-08 17:28:25', '2022-01-06 05:56:44', 4),
-(70, 'LifeAround2Angels Bath Bombs Gift Set 12 USA made Fizzies', '12 uniquely handcrafted bath bombs. Functional and relaxing. Great Mothers day gifts.Truly made in California, USA freshly with premium USA natural ingredients - fizzes with colors, will not stain your tub! Therapeutic and Moisturizing bath bombs, formulated for Normal/Dry skin Developed and Created by us, a bath bomb company with passion Bath Bomb Individually Wrapped. Perfect gift ideas for party favors and wedding. This bath bomb gift sets is on many\'s wish list. Perfect for Fathers Day gifts, birthday gift, gifts for her, spa/bath gifts, for the special one, perfect gifts for mom, wife, girlfriend or women you love.', 2, 129.99, 0, '2021-12-08 17:57:10', '2022-01-12 07:24:10', '2021-12-08 17:57:10', '2022-01-06 02:44:53', 6),
-(72, 'قربة ديكور إبريق ماء تراكوتا فخار مزخرف - 1.5 لتر', 'الخامة: الطين الترابي ، اللون: بني ترابي السعة: 1.5 لتر / 51 أونصة تحتوي العبوة: قطعة واحدة من إبريق الماء مع مزايا الغطاء: طبيعته المسامية تحافظ على الماء باردًا بشكل طبيعي طوال اليوم دون أي تبريد ومصممة هندسيًا للاستخدام اليومي. تم اختباره في المختبر: طين طبيعي 100٪ ، غير سام ، خالي من الرصاص ، خالي من الزرنيخ ، خالي من الكادميوم ، غير مصقول ، لا يتم استخدام ألوان صناعية - لا يضر بصحتك وبيئتك بأي شكل من الأشكال.', 11, 160.00, 0, '2021-12-08 18:09:18', '2022-01-28 08:25:55', '2021-12-08 18:09:18', '2022-01-07 08:26:35', 6),
-(73, 'Leather Bound Journal Gift Set', 'Essential Alchemist is an American company that provides a variety of novelty products for customers that care about quality, design, and details. Our products can be collectables or used as gifts during special occasions. It’s also good for personal use and it’s easily portable. Our latest product, the vintage leather bound journal gift set, comes in three different colors to choose from. Don’t wait, join our family now and become an essential alchemist! We also want to provide great customer service for everyone. Our customer service team is friendly and responsible, so if you have any questions, concerns or suggestions, feel free to contact us. We would love to hear your valuable feedback.', 8, 199.00, 0, '2021-12-08 18:17:58', '2022-01-21 07:20:55', '2021-12-08 18:17:58', '2021-12-28 07:20:55', 6),
-(74, '(200Pcs)100pcs Translucent Plastic Bags/Cellophane Bags', 'PACK INCLUDE: 100 Packaging Bag with 100 black stickers. does not contain any other decorative items. MATERIAL : Plastic Translucent Bags. This packaging bag is flat bags don\'t have self adhesive seal function. USAGE : Perfect for packaging home-made cookies, candies, pastries, doughnut and more.It also ideal for packing small gifts or accessories. Good choice for gifts. SIZE:Packaging Bag:8.7*22.8cm,Hand made stickers：10*3cm Click the Palksky link above to see all of our products', 9, 230.00, 0, '2021-12-08 18:23:21', '2022-01-18 18:23:21', '2021-12-08 18:23:21', '2022-01-06 05:43:15', 6),
-(117, 'Wool Yarn', '1. Content: 100% Extraordinarily Luxurious Merino wool 2. Specification: 127yd / 116 m ( 1.76 oz / 50 g ), Needle Size: 4-8mm, 1 ball * 50g. 3. Excellent Sourcing: Merino wool is a material derived from Merino sheep and is known for its outstanding characteristics including its excellent softness, gloss and breathability. Merino wool yarn is softer, thinner and warmer than many others.', 4, 30.00, 0, '2022-01-07 05:04:44', '2022-01-22 05:04:44', '2022-01-07 05:04:44', '2022-01-07 05:04:44', 4);
+(67, 'Fuyit Natural Wood Slices', 'Natural & Original: Wood Circles are made of natural wood with barks, have a rustic beauty and are in good shape. Some wood bark may fall partially from the slices.', 5, 80.00, 0, '2021-12-08 17:22:56', '2024-07-28 06:49:55', '2021-12-08 17:22:56', '2022-03-04 07:50:17', 4),
+(68, 'Best Kit With No Tools Needed', 'Whether you are a jewelry making aficionado or just wanting to start a new hobby, a jewelry making kit is a must-have. These kits come will all the supplies you need to make earrings, necklaces, bracelets, anklets, and more, while also coming in handy when fast, timely repairs are needed.Whether you are a jewelry making aficionado or just wanting to start a new hobby, a jewelry making kit is a must-have. These kits come will all the supplies you need to make earrings, necklaces, bracelets, anklets, and more, while also coming in handy when fast, timely repairs are needed.', 6, 99.99, 0, '2021-12-08 17:28:25', '2024-04-27 16:28:25', '2021-12-08 17:28:25', '2022-01-06 05:56:44', 4),
+(70, 'LifeAround2Angels Bath Bombs Gift Set 12 USA made Fizzies', '12 uniquely handcrafted bath bombs. Functional and relaxing. Great Mothers day gifts.Truly made in California, USA freshly with premium USA natural ingredients - fizzes with colors, will not stain your tub! Therapeutic and Moisturizing bath bombs, formulated for Normal/Dry skin Developed and Created by us, a bath bomb company with passion Bath Bomb Individually Wrapped. Perfect gift ideas for party favors and wedding. This bath bomb gift sets is on many\'s wish list. Perfect for Fathers Day gifts, birthday gift, gifts for her, spa/bath gifts, for the special one, perfect gifts for mom, wife, girlfriend or women you love.', 2, 129.99, 0, '2021-12-08 17:57:10', '2024-03-30 06:24:10', '2021-12-08 17:57:10', '2022-01-06 02:44:53', 6),
+(72, 'Village Decor Terracotta Water Jug/Pitcher - 1.5 LTR', 'MATERIAL: Earthen Clay, COLOR: Earthen Brown CAPACITY: 1.5 Ltr / 51 Oz PACKAGE CONTAINS: 1 Piece of Water Jug with Lid BENEFITS: Its porous nature keeps the water naturally cool all day without any refrigeration and ergonomically designed for everyday use. TESTED UNDER LABORATORY: 100% Natural clay, Non-toxic, Lead Free, Arsenic free, Cadmium free, Un glazed, No artificial colors are used - does not harm your health and environment in any way.', 11, 160.00, 0, '2021-12-08 18:09:18', '2024-06-20 07:15:55', '2021-12-08 18:09:18', '2022-03-04 16:42:41', 6),
+(73, 'Leather Bound Journal Gift Set', 'Essential Alchemist is an American company that provides a variety of novelty products for customers that care about quality, design, and details. Our products can be collectables or used as gifts during special occasions. It’s also good for personal use and it’s easily portable. Our latest product, the vintage leather bound journal gift set, comes in three different colors to choose from. Don’t wait, join our family now and become an essential alchemist! We also want to provide great customer service for everyone. Our customer service team is friendly and responsible, so if you have any questions, concerns or suggestions, feel free to contact us. We would love to hear your valuable feedback.', 8, 199.00, 0, '2021-12-08 18:17:58', '2024-02-07 08:14:10', '2021-12-08 18:17:58', '2022-03-04 13:33:43', 6),
+(74, '(200Pcs)100pcs Translucent Plastic Bags/Cellophane Bags', 'PACK INCLUDE: 100 Packaging Bag with 100 black stickers. does not contain any other decorative items. MATERIAL : Plastic Translucent Bags. This packaging bag is flat bags don\'t have self adhesive seal function. USAGE : Perfect for packaging home-made cookies, candies, pastries, doughnut and more.It also ideal for packing small gifts or accessories. Good choice for gifts. SIZE:Packaging Bag:8.7*22.8cm,Hand made stickers：10*3cm Click the Palksky link above to see all of our products', 9, 230.00, 0, '2021-12-08 18:23:21', '2024-07-19 17:23:21', '2021-12-08 18:23:21', '2022-03-04 07:55:59', 6),
+(117, 'Wool Yarn', '1. Content: 100% Extraordinarily Luxurious Merino wool 2. Specification: 127yd / 116 m ( 1.76 oz / 50 g ), Needle Size: 4-8mm, 1 ball * 50g. 3. Excellent Sourcing: Merino wool is a material derived from Merino sheep and is known for its outstanding characteristics including its excellent softness, gloss and breathability. Merino wool yarn is softer, thinner and warmer than many others.', 4, 30.00, 0, '2022-01-07 05:04:44', '2025-03-01 05:21:40', '2022-01-07 05:04:44', '2022-03-05 05:21:40', 4);
 
 -- --------------------------------------------------------
 
@@ -339,8 +341,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `firstName`, `lastName`, `username`, `email`, `password`, `address`, `mobile`, `email_verified_at`, `remember_token`, `created_at`, `updated_at`, `role_id`, `is_delete`, `image`) VALUES
-(1, 'admin', 'admin', 'admin2022', 'laraveldemo2018@gmail.com', '$2y$10$l9icgrL0l84VOJDsLgRde.ZdHUMBRjr5A.eVNLDrPPH62NuSOBkV2', 'Gaza ElRemal Street', '0592684956', NULL, '1zZVTmY8k5Y38rns7v4XAmrygMVPiQHZo9BB6ZZlR3wtypcoguTDfyNqdXJj', NULL, '2021-11-21 09:58:20', 1, 0, '/storage/uploads/n0_image.PNG'),
-(4, 'entesar', 'elbanna', 'entesar2000', 'entesar.2000banna@gmail.com', '$2y$10$rNSVfHwtQ9JOvmlRnEafj.iW0bSjiSk8/1/sSJyu/9QJY1YjLxe2G', 'elreemal', '1234567898', NULL, 'sJ0C20kDNezEzo6jTNAZ2xrWlnOME1vM7IjJ9Yn4tPrw3M0R305393Le7E4T', '2021-11-18 06:35:38', '2022-01-04 07:43:52', 2, 0, '/storage/uploads/user2.png'),
+(1, 'admin', 'admin', 'admin2022', 'laraveldemo2018@gmail.com', '$2y$10$l9icgrL0l84VOJDsLgRde.ZdHUMBRjr5A.eVNLDrPPH62NuSOBkV2', 'Gaza ElRemal Street', '0592684956', NULL, 'bg7HITIocjinsgFwcq9LlD7NH4MOSSWXXKKGGKh9oJ7RJl2Gg75DWeLd7yOX', NULL, '2021-11-21 09:58:20', 1, 0, '/storage/uploads/n0_image.PNG'),
+(4, 'entesar', 'elbanna', 'entesar2000', 'entesar.2000banna@gmail.com', '$2y$10$rNSVfHwtQ9JOvmlRnEafj.iW0bSjiSk8/1/sSJyu/9QJY1YjLxe2G', 'elreemal', '1234567898', NULL, 'T5lgmkUXTKRS8L93FvucTfoJ6Iz7RwnST0f1wClbiTm71h0jOOdSn3em1jbf', '2021-11-18 06:35:38', '2022-01-04 07:43:52', 2, 0, '/storage/uploads/user2.png'),
 (6, 'sara', 'elbanna', 'sara2011', 'sara.2000banna@gmail.com', '$2y$10$eP6vqOob50mAhongIlR3kenbsujQSbRUq.LqjzkzBHgzM0zZyN4Di', 'remal', '8765432876', NULL, NULL, '2021-11-18 06:56:22', '2022-01-06 19:58:18', 2, 0, '/storage/uploads/n0_image.PNG'),
 (8, 'malak', 'elbanna', 'malak2000', 'hsoubcontrolpanel@gmail.com', '$2y$10$Y4a2qwXBGW7juivdRlFbFe2qa9cvb93FwclB7cPx6586RftXFa4IW', 'el remal', '9999999999', NULL, NULL, '2021-11-19 17:38:22', '2022-01-04 07:52:34', 3, 0, '/storage/uploads/user.jpg'),
 (20, 'rawand', 'elbanna', 'rawand2000', 'rawand.2000banna@gmail.com', '$2y$10$NRUmkYygsvM/ygguK0DX1uzQP7NVV1FFP6oq01t5yFwcAE7SFNLGq', 'elremal', '1234567895', NULL, NULL, '2021-12-28 04:56:28', '2021-12-28 04:56:28', 3, 0, '/storage/uploads/n0_image.PNG'),
@@ -448,13 +450,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `bids`
 --
 ALTER TABLE `bids`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
 -- AUTO_INCREMENT for table `bidupdates`
 --
 ALTER TABLE `bidupdates`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `categories`
@@ -484,7 +486,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=181;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=202;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`

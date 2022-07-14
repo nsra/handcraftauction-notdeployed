@@ -14,7 +14,7 @@
                     &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                     &nbsp; &nbsp;
                    
-                    <a class="btn btn-lg  btn-warning" href="{{ route('buyer.bids') }}" style="color:black">{{ __('All Bids')}}</a>
+                    {{-- <a class="btn btn-lg  btn-warning" href="{{ route('buyer.bids') }}" style="color:black">{{ __('All Bids')}}</a> --}}
                 </form>
             </div>
             <hr>
